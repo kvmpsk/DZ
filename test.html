@@ -13,10 +13,39 @@
 	<script>
 		"use strict"
 
-			var a = 2;
-			var x = 1 + (a *= 2);	
-			alert (x)
+		var a;
+		var b;
 
+		a = 7;
+		b = 4;
+				
+		if (a >= 0 & (b >= 0)) {
+				alert (a-b)
+			} else { 
+				(a <= 0 & b<=0)
+				alert (a*b)	
+		}		
+		
+		a = -7;
+		b = -4;		
+
+		if (a >= 0 & (b >= 0)) {
+				alert(a - b)
+			} else {
+				(a <= 0 & b <= 0)
+				alert(a * b)
+		}	
+		
+		a = -7;
+		b = 4;
+
+		if (Math.sign (a) < 0 & (Math.sign(b) > 0)) {
+				alert(a + b)
+				} else { 
+				(Math.sign(a) > 0)(Math.sign(b) < 0)	
+				alert(a + b)
+		}			
+		
 	</script>
 
 </body>
