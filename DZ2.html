@@ -9,7 +9,7 @@
 <body>
 				// пункт 1
 	<script>
-		  "use strict"					
+		"use strict"					
 
 		var a = 1, b = 1, c, d;
 			c = ++a; alert(c);           // 2  Если перед переменной стоит инкремент (преинкремент), возвращает увеличение на единицу значение, т.е. а=2 и с=2 
@@ -18,91 +18,98 @@
 			d = (2 + b++); alert(d);     // 4  Во данном случае мы прибавили 1 к ранее увеличенному на 1 значению b=2  и получили b=3, но возвращаем предудущее значение, т.е. 2+2=4   	
 			alert(a);                    // 3  Т.к. в ходе вышеперечисленных пересвоений значение "а" увеличивалось 2 раза на 1 
 			alert(b);                    // 3  Т.к. в ходе вышеперечисленных пересвоений значение "b" увеличивалось 2 раза на 1  
-
-	</script>
+	
 	
 				// пункт 2
-	<script>
-			var a = 2;
-			var x = 1 + (a *= 2);		 // x будет равен 5	
-	</script>
+	
+		var a = 2;
+		var x = 1 + (a *= 2);		 // x будет равен 5	
+	
 			
 				// пункт 3
-	<script>
-			var a;
-			var b;
+	
+		var a;
+		var b;
 
-			a = 7;
-			b = 4;
+		a = 7;
+		b = 4;
 
-			if (a >= 0 && b >= 0) {
-					alert(a - b);
-				} else {
-					(a <= 0 && b <= 0);
-					alert('Числа отрицательные');
-			}
+		if (a >= 0 && b >= 0) {
+				alert(a - b);
+			} else {
+				(a <= 0 && b <= 0);
+				alert('Числа отрицательные');
+		}
 
-			a = -7;
-			b = -4;
+		a = -7;
+		b = -4;
 
-			if (a <= 0 && b <= 0) {
-					alert(a * b);
-				} else {
-					(a >= 0 && b >= 0);
-					alert('Числа положительные');
-			}
+		if (a <= 0 && b <= 0) {
+				alert(a * b);
+			} else {
+				(a >= 0 && b >= 0);
+				alert('Числа положительные');
+		}
 
-			a = -7;
-			b = 4;
+		a = -7;
+		b = 4;
 
-			if (Math.sign(a) < 0 && Math.sign(b) > 0) {
-					alert(a + b);
-				} else {
-					(Math.sign(a) > 0 && Math.sign(b) < 0);
-					alert(a + b);
-			}
-
-	</script>			
-
+		if (Math.sign(a) < 0 && Math.sign(b) > 0) {
+				alert(a + b);
+			} else {
+				(Math.sign(a) > 0 && Math.sign(b) < 0);
+				alert(a + b);
+		}
+			
 			// пункт 4
 	
-	<script>
+		
 
 
-	</script>		
+		
 
-			// пункт 5
-
-	<script>
-			var a = 9;
-			var b = 4;
-
-			function summ (a, b) {
+			// пункт 5	
+		
+		function summ(a, b) {
 				return a + b;
 			}
 
-			function subtraction (a, b) {
+			function subtraction(a, b) {
 				return a - b;
 			}
 
-			function division (a, b) {
+			function division(a, b) {
 				return a / b;
 			}
 
-			function multiplay (a, b) {
+			function multiplay(a, b) {
 				return a * b;
 			}
 
-	</script>				
-			
-			// пункт 6
+			alert(summ(5, 9));
+			alert(subtraction(5, 9));
+			alert(division(5, 9));
+			alert(multiplay(5, 9));
 				
-	<script>
-			
+			// пункт 6
+							
+		function mathOperation(arg1, arg2, operation) {
+			switch (operation) {
+				case 'сложение':
+					return arg1 + arg2;
+					break;
+				case 'вычитание':
+					return arg1 - arg2;
+					break;
+				case 'деление':
+					return arg1 / arg2;
+					break;
+				case 'умножение':
+					return arg1 * arg2;
+					break;
+			}
+		}
 
-	</script>
-
-	
-	
+	</script>	
 </body>
 </html>
