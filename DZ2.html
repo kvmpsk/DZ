@@ -7,7 +7,9 @@
 	<title>DZ2</title>
 </head>
 <body>
-				// пункт 1
+				
+				// пункт 2
+
 	<script>
 		"use strict"					
 
@@ -18,15 +20,14 @@
 			d = (2 + b++); alert(d);     // 4  Во данном случае мы прибавили 1 к ранее увеличенному на 1 значению b=2  и получили b=3, но возвращаем предудущее значение, т.е. 2+2=4   	
 			alert(a);                    // 3  Т.к. в ходе вышеперечисленных пересвоений значение "а" увеличивалось 2 раза на 1 
 			alert(b);                    // 3  Т.к. в ходе вышеперечисленных пересвоений значение "b" увеличивалось 2 раза на 1  
-	
-	
+		
 				// пункт 2
 	
 		var a = 2;
-		var x = 1 + (a *= 2);		 // x будет равен 5	
-	
-			
+		var x = 1 + (a *= 2);		 // x будет равен 5		
+					
 				// пункт 3
+
 				// вариант 1
 		var a = 7
 		var b = 4
@@ -38,13 +39,13 @@
 		// var b = -4
 
 		if (a >= 0 && b >= 0)
-			alert(a - b);
+			console.log(a - b);
 		if (a < 0 && b < 0)
-			alert(a * b);
+			console.log(a * b);
 		if (a >= 0 && b < 0)
-			alert(a + b);
+			console.log(a + b);
 		if (a < 0 && b >= 0)
-			alert(a + b);	 		
+			console.log(a + b);	 		
 
 				// вариант 2
 
@@ -55,39 +56,46 @@
 		b = 4;
 
 		if (a >= 0 && b >= 0) {
-				alert(a - b);
+				console.log(a - b);
 			} else {
 				(a <= 0 && b <= 0);
-				alert('Числа отрицательные');
+				console.log('Числа отрицательные');
 		}
 
 		a = -7;
 		b = -4;
 
 		if (a <= 0 && b <= 0) {
-				alert(a * b);
+				console.log(a * b);
 			} else {
 				(a >= 0 && b >= 0);
-				alert('Числа положительные');
+				console.log('Числа положительные');
 		}
 
 		a = -7;
 		b = 4;
 		
 		if (Math.sign(a) < 0 && Math.sign(b) > 0) {
-				alert(a + b);
+				console.log(a + b);
 			} else {
 				(Math.sign(a) > 0 && Math.sign(b) < 0);
-				alert(a + b);
+				console.log(a + b);
 		}
 			
 			// пункт 4
-	
 		
+		function printToNumber(a) {
+				for (i = a; i <= 15; i++) {
+					switch (a) {
+						default:
+							console.log(i);
+					}
+				}
+			}
 
-
-		
-
+		printToNumber(6);
+				
+				
 			// пункт 5	
 		
 		function summ(a, b) {
@@ -106,10 +114,10 @@
 				return a * b;
 			}
 
-			alert(summ(5, 9));
-			alert(subtraction(5, 9));
-			alert(division(5, 9));
-			alert(multiplay(5, 9));
+			console.log(summ(5, 9));
+			console.log(subtraction(5, 9));
+			console.log(division(5, 9));
+			console.log(multiplay(5, 9));
 				
 			// пункт 6
 							
@@ -130,8 +138,11 @@
 			}
 		}
 
-		// пункт 7  ()сравнение null и 0)
-
+			// пункт 7  ()сравнение null и 0)
+			// null означает отсуттвие какого-либо значения независимо от типа 
+			// 0 означает числовое значенние равное нулю
+			
+			
 
 			// пункт 8 (Возведение в степень)
 
