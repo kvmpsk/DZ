@@ -27,7 +27,27 @@
 	
 			
 				// пункт 3
-	
+				// вариант 1
+		var a = 7
+		var b = 4
+
+		// var a = -7
+		// var b = -4
+
+		// var a = 7
+		// var b = -4
+
+		if (a >= 0 && b >= 0)
+			alert(a - b);
+		if (a < 0 && b < 0)
+			alert(a * b);
+		if (a >= 0 && b < 0)
+			alert(a + b);
+		if (a < 0 && b >= 0)
+			alert(a + b);	 		
+
+				// вариант 2
+
 		var a;
 		var b;
 
@@ -53,7 +73,7 @@
 
 		a = -7;
 		b = 4;
-
+		
 		if (Math.sign(a) < 0 && Math.sign(b) > 0) {
 				alert(a + b);
 			} else {
@@ -93,22 +113,32 @@
 				
 			// пункт 6
 							
-		function mathOperation(arg1, arg2, operation) {
+		function mathOperation(a, b, operation) {
 			switch (operation) {
 				case 'сложение':
-					return arg1 + arg2;
+					return summ;
 					break;
 				case 'вычитание':
-					return arg1 - arg2;
+					return subtraction;
 					break;
 				case 'деление':
-					return arg1 / arg2;
+					return division;
 					break;
 				case 'умножение':
-					return arg1 * arg2;
+					return multiplay;
 					break;
 			}
 		}
+
+		// пункт 7  ()сравнение null и 0)
+
+
+			// пункт 8 (Возведение в степень)
+
+			function deegree2(x) {
+				return x * x
+			}
+			alert(deegree2(5));
 
 	</script>	
 </body>
