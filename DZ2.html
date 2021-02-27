@@ -94,7 +94,9 @@
 			}
 
 		printToNumber(6);
-				
+
+
+						
 				
 			// пункт 5	
 		
@@ -121,20 +123,16 @@
 				
 			// пункт 6
 							
-		function mathOperation(a, b, operation) {
+		function mathOperation(arg1, arg2, operation) {
 			switch (operation) {
 				case 'сложение':
-					return summ;
-					break;
+					return summ (arg1, arg2);					
 				case 'вычитание':
-					return subtraction;
-					break;
+					return subtraction (arg1, arg2);					
 				case 'деление':
-					return division;
-					break;
+					return division (arg1, arg2);					
 				case 'умножение':
-					return multiplay;
-					break;
+					return multiplay (arg1, arg2);					
 			}
 		}
 
@@ -146,10 +144,11 @@
 
 			// пункт 8 (Возведение в степень)
 
-			function deegree2(x) {
-				return x * x
-			}
-			alert(deegree2(5));
+			function deegree(val, pow) {
+					return (val * val) * pow
+				}
+
+				alert(deegree(2, 4));	
 
 	</script>	
 </body>
