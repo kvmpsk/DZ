@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		"use strict"
+		// p.1  С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+
+		// количество простых чисел, которые надо вывести (от 0 до 100)
+		let count = 25;
+		let currentNumber = 2;
+
+		while (count !== 0) {
+			if (isNatural(currentNumber)) {
+				console.log(currentNumber);
+				count--;
+			}
+			currentNumber++;
+		}
+
+		function isNatural(number) {
+			for (let i = 2; i <= number / 2; i++) {
+				if (number % i == 0) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+		//  вариант 2 получение ряда простых чисел при помощи метки
+
+		let n = 100;
+
+		simplNumber:
+		for (let i = 2; i <= n; i++) {
+			for (let j = 2; j < i; j++) {
+				if (i % j === 0) continue simplNumber;
+			}
+			console.log(i);
+		}
+
+		// p.2  a) Организовать  массив для хранения товаров в корзине;
+		//      b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+
+		const cart = [
+			['item', 650, 2],
+			['item', 350, 1],
+			['item', 150, 3],
+			['item', 50, 6],
+		]
+
+		let summItemPrice = 0;
+
+		//длинный вариант для лучшего восприятия новичка, т.е. меня
+
+		// function countBasketPrice() {
+		// 	summItemPrice = cart[0][1] * [2] + cart[1][1] * [2] + cart[2][1] * [2] + cart[3][1] * [2]; 
+		// }
+
+		// короткий вариант под конкретный постоянный массив 
+
+		function countBasketPrice() {
+			for (const val of cart)
+				summItemPrice += val[1] * [2];
+		}
+
+		countBasketPrice(cart);
+		console.log(summItemPrice);
+
+
+		// p.3  Вывести С помощью цикла for числа от 0 до 9 не используя тело цикла. 
+
+		for (let i = 0; i <= 9; console.log(i++)) {
+
+		}
+
+	</script>
+
+
+
+</body>
+
+</html>

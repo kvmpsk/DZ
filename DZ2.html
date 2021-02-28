@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DZ2</title>
+</head>
+<body>
+				
+				// пункт 2
+
+	<script>
+		"use strict"					
+
+		var a = 1, b = 1, c, d;
+			c = ++a; alert(c);           // 2  Если перед переменной стоит инкремент (преинкремент), возвращает увеличение на единицу значение, т.е. а=2 и с=2 
+			d = b++; alert(d);           // 1  Если инкремент стоит после переменной (постинкремент), возвращает предудущее значениe, т.к. b=1 то и d=1
+			c = (2 + ++a); alert(c);     // 5  В данном случае к 2 прибавляется значение а=3, и в результате получается 5 
+			d = (2 + b++); alert(d);     // 4  Во данном случае мы прибавили 1 к ранее увеличенному на 1 значению b=2  и получили b=3, но возвращаем предудущее значение, т.е. 2+2=4   	
+			alert(a);                    // 3  Т.к. в ходе вышеперечисленных пересвоений значение "а" увеличивалось 2 раза на 1 
+			alert(b);                    // 3  Т.к. в ходе вышеперечисленных пересвоений значение "b" увеличивалось 2 раза на 1  
+		
+				// пункт 2
+	
+		var a = 2;
+		var x = 1 + (a *= 2);		 // x будет равен 5		
+					
+				// пункт 3
+		
+		var a = +prompt('Введите первое целое число: '); 		
+		var b = +prompt('Введите второе целое число: '); 
+		
+		if (a >= 0 && b >= 0)
+			console.log(a - b);
+				console.log(a - b);
+		else if (a < 0 && b < 0)
+			console.log(a * b);	
+		else 	console.log(a + b);		
+				
+			
+			// пункт 4
+		
+		function printToNumber(a) {
+				for (i = a; i <= 15; i++) {
+					switch (a) {
+						default:
+							console.log(i);
+					}
+				}
+			}
+
+		printToNumber(6);
+
+		let a = +prompt('Введите число от 0 до 15')
+			switch(a) {
+				case 1:
+					console.log(a++);
+				case 2:
+					console.log(a++);
+				case 3:
+					console.log(a++);
+				case 4:
+					console.log(a++);
+				case 5:
+					console.log(a++);
+				case 6:
+					console.log(a++);
+				case 7:
+					console.log(a++);
+				case 8:
+					console.log(a++);
+				case 9:
+					console.log(a++);
+				case 10:
+					console.log(a++);
+				case 11:
+					console.log(a++);
+				case 12:
+					console.log(a++);
+				case 13:
+					console.log(a++);
+				case 14:
+					console.log(a++);
+				case 15:
+					console.log(a++);
+			}				
+				
+			// пункт 5	
+		
+		function summ(a, b) {
+				return a + b;
+			}
+
+			function subtraction(a, b) {
+				return a - b;
+			}
+
+			function division(a, b) {
+				return a / b;
+			}
+
+			function multiplay(a, b) {
+				return a * b;
+			}
+
+			console.log(summ(5, 9));
+			console.log(subtraction(5, 9));
+			console.log(division(5, 9));
+			console.log(multiplay(5, 9));
+				
+			// пункт 6
+							
+		function mathOperation(arg1, arg2, operation) {
+			switch (operation) {
+				case 'сложение':
+					return summ (arg1, arg2);					
+				case 'вычитание':
+					return subtraction (arg1, arg2);					
+				case 'деление':
+					return division (arg1, arg2);					
+				case 'умножение':
+					return multiplay (arg1, arg2);					
+			}
+		}
+
+			// пункт 7  ()сравнение null и 0)
+			// null означает отсуттвие какого-либо значения независимо от типа 
+			// 0 означает числовое значенние равное нулю
+			
+			
+
+			// пункт 8 (Возведение в степень)
+
+			function deegree(val, pow) {
+					return (val * val) * pow
+				}
+
+				alert(deegree(2, 4));	
+
+	</script>	
+</body>
+</html>
