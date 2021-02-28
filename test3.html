@@ -14,46 +14,40 @@
 	<script>
 		"use strict"
 
-		
+	const cart = [
+			['item', 650, 2],
+			['item', 350, 1],
+			['item', 150, 3],
+			['item', 50, 6],
+		]
+
+	let summItemPrice = 0
+
+	function countBasketPrice() {
+		summItemPrice = cart[0][1]*[2] + cart[1][1]*[2] + cart[2][1]*[2] + cart[3][1]*[2];
+	}
+
+	countBasketPrice(cart)
+	console.log(summItemPrice)
 
 
-			let n = 100;
+		// let cart = [
+		// 		[1, 2, 3],
+		// 		[1, 2, 3],
+		// 		[1, 2, 3],
+		// 		[1, 2, 3],
+		// 		[1, 2, 3],
+		// 		[1, 2, 3],
+		// 	]
 
-			nextPrime:
-				for (let i = 2; i <= n; i++) { // Для всех i...
-
-					for (let j = 2; j < i; j++) { // проверить, делится ли число..
-						if (i % j === 0) continue nextPrime; // не подходит, берём следующее
-					}
-
-					console.log(i); // простое число
-				}
+		// 	let sumcart = 0;
+		// 	for (let i = 0; i < cart.length; i++) {
+		// 		sumcart += cart[i];
+		// 	}
 
 
-		// Получаем количество чисел которые нам надо вывести
-		let count = 25;
 
-		// Определяем базовое число
-		let currentNumber = 2;
 
-		//Продолжаем цикл до тех пор пока количество требуемых для отображения чисел не достигнет нуля  
-		while (count !== 0) {
-			if (isNatural(currentNumber)) {
-				console.log(currentNumber);
-				count--;
-			}
-			currentNumber++;
-		}
-
-		// Определяем функцию которая проверяет натурайное ли число или нет
-		function isNatural(number) {
-			for (let i = 2; i <= number / 2; i++) {
-				if (number % i == 0) {
-					return false;
-				}
-			}
-			return true;
-		}
 
 
 	</script>

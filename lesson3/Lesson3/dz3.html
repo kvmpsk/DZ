@@ -15,7 +15,6 @@
 
 		// количество простых чисел, которые надо вывести (от 0 до 100)
 		let count = 25;
-
 		let currentNumber = 2;
 
 		while (count !== 0) {
@@ -52,19 +51,21 @@
 		// p.2  a) Организовать  массив для хранения товаров в корзине;
 		//      b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
 
-		cost cart = [
+		const cart = [
 			['item', 650, 2],
 			['item', 350, 1],
 			['item', 150, 3],
-			['item', 50, 6],
-			['item', 950, 5],
-			['item', 450, 4],
+			['item', 50, 6],			
 		]
 
-		function countBasketPrice () {
+		let summItemPrice = 0;
 
-
+		function countBasketPrice() {
+			summItemPrice = cart[0][1]*[2] + cart[1][1]*[2] + cart[2][1]*[2] + cart[3][1]*[2];
 		}
+
+		countBasketPrice(cart)
+		console.log(summItemPrice)
 
 
 		// p.3  Вывести С помощью цикла for числа от 0 до 9 не используя тело цикла. 
