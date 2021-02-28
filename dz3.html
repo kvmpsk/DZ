@@ -27,7 +27,7 @@
 
 		function isNatural(number) {
 			for (let i = 2; i <= number / 2; i++) {
-				if (number % i == 0) {
+				if (number % i === 0) {
 					return false;
 				}
 			}
@@ -67,8 +67,8 @@
 		// короткий вариант под конкретный постоянный массив 
 
 		function countBasketPrice() {
-				for (const val of cart)
-			summItemPrice += val[1] * [2];
+			for (const val of cart)
+				summItemPrice += val[1] * [2];
 		}
 
 		countBasketPrice(cart);
@@ -82,7 +82,7 @@
 		}
 
 	</script>
-	
+
 </body>
 
 </html>
