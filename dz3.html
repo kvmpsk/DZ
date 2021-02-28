@@ -58,12 +58,21 @@
 
 		let summItemPrice = 0;
 
+		//длинный вариант для лучшего восприятия новичка, т.е. меня
+
+		// function countBasketPrice() {
+		// 	summItemPrice = cart[0][1] * [2] + cart[1][1] * [2] + cart[2][1] * [2] + cart[3][1] * [2]; 
+		// }
+
+		// короткий вариант под конкретный постоянный массив 
+
 		function countBasketPrice() {
-			summItemPrice = cart[0][1] * [2] + cart[1][1] * [2] + cart[2][1] * [2] + cart[3][1] * [2];
+				for (const val of cart)
+			summItemPrice += val[1] * [2];
 		}
 
-		countBasketPrice(cart)
-		console.log(summItemPrice)
+		countBasketPrice(cart);
+		console.log(summItemPrice);
 
 
 		// p.3  Вывести С помощью цикла for числа от 0 до 9 не используя тело цикла. 
