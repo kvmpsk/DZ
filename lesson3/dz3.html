@@ -55,9 +55,7 @@
 			['item', 150, 3],
 			['item', 50, 6],
 		]
-
-		let summItemPrice = 0;
-
+		
 		//длинный вариант для лучшего восприятия новичка, т.е. меня
 
 		// function countBasketPrice() {
@@ -67,8 +65,9 @@
 		// короткий вариант под конкретный постоянный массив 
 
 		function countBasketPrice() {
+			let summItemPrice = 0;
 			for (const val of cart)
-				summItemPrice += val[1] * [2];
+			summItemPrice += val[1] * [2];
 		}
 
 		countBasketPrice(cart);
@@ -82,9 +81,7 @@
 		}
 
 	</script>
-
-
-
+	
 </body>
 
 </html>
