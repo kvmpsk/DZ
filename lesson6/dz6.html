@@ -6,11 +6,129 @@
          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>DZ6</title>
+   
+   <style>
+      .catalog {
+         width: 600px;
+         border: 1px solid #000;
+         margin-bottom: 10px;
+         background: floralwhite;
+      }
+      .clr-cart {
+         margin-top: 25px;
+      }
+   </style>
+   
 </head>
 <body>
 
+
+<h2>Каталог:</h2>
+<div class="catalog"></div>
+<hr>
+<h2>Корзина:</h2>
+<div class="cart"></div>
+<button class="clr-cart">Очистить корзину</button>
+
 <script>
    'use strict'
+   
+   const catalog = {
+      cartListBlock: null,
+      cart: null,
+      List: [
+         {
+            id_product: 1,
+            product_name: "фуболка",
+            price: 650,
+            quantity: 2
+         },
+         {
+            id_product: 2,
+            product_name: "носки",
+            price: 100,
+            quantity: 3
+         },
+         {
+            id_product: 3,
+            product_name: "рубашка",
+            price: 1250,
+            quantity: 2
+         },
+         {
+            id_product: 4,
+            product_name: "джемпер",
+            price: 1200,
+            quantity: 1
+         },
+      ],
+      
+      init(catalogBlockClass, cart) {
+         this.catalogBlock = document.querySelector('.${catalogBlock}');
+         this.cart = cart;
+         this.render ();
+         this.addEventHandlers ();
+      
+         this.render();
+      },
+      render() {
+         if (this.getCatalogListlendth() > 0) {
+            this.renderCatalogList();
+         } else {
+            this.renderEmptyCatalog();
+         }
+      },
+      
+      addEventHandlers () {
+         this.catalogBlock.addEventListener('click', event => this.addToBasket(event));
+      },
+      
+      addTobasket (event) {
+         if (!event.target.classList.contains('product__add-to-cart')) return;
+         const id_product = +event.target.dataset.id_product;
+         this.cart.addTobasket(id_product);
+      },
+      
+      getCatalogListLength () {
+         return this.list.length;
+      },
+      
+         renderCatalogList () {
+         this.catalogBlock.innerHTML = '';
+         this.list.forEach(item => {
+            this.catalogBlock.insertAdjacentHTML('beforeend', this.renderCatalogItem(item));
+         });
+      },
+      
+      renderCatalogItem(item) {
+         return `<div class="product">
+                <h3>${item.product_name}</h3>
+                <p>${item.price} руб.</p>
+                <button> class="product__add-to-cart" data-id_product="${item.id_product}">В корзину</button>
+         </div>`;
+      },
+      
+      renderEmptyCatalog() {
+         this.catalogBlock.innerHTML = '';
+         this.catalogBlock.insertAdjacentHTML('beforeend', `Каталог товаров пуст.`);
+      },
+   };
+
+   const cart = {
+      cartBlock: null,
+      clrCartButton: null,
+      catalogList: [],
+      goods: [
+         {
+            id_product: 1,
+            product_name: "фуболка",
+            price: 650,
+            quantity: 2
+         },
+      ],
+      
+   }
+  
    
    
    
