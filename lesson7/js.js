@@ -68,7 +68,7 @@ const map = {
     const table = document.getElementById('game');
     table.innerHTML = '';
 
-    this.cells = {};  // {x1_y1: td, x1_y2: td}
+    this.cells = {};
     this.usedCells = [];
 
     for (let row = 0; row < rowsCount; row++) {
@@ -137,13 +137,13 @@ const snake = {
 
   makeStep() {
     this.lastStepDirection = this.direction;
-    this.body.unshift(this.getNextStepHeadPoint()); // [p3, p2, p1] => [p4, p3, p2]
+    this.body.unshift(this.getNextStepHeadPoint());
     this.body.pop();
   },
 
   growUp() {
-    const lastBodyIndex = this.body.length - 1;
-    const lastBodyPoint = this.body[lastBodyIndex];
+    const lastBodyIdx = this.body.length - 1;
+    const lastBodyPoint = this.body[lastBodyIdx];
     const lastBodyPointClone = Object.assign({}, lastBodyPoint);
     this.body.push(lastBodyPointClone);
   },
@@ -248,7 +248,7 @@ const game = {
 
     if (!validation.isValid) {
       for (const err of validation.errors) {
-        console.log(err);
+        console.error(err);
       }
       return;
     }
@@ -320,7 +320,7 @@ const game = {
   reset() {
     this.stop();
     this.score.drop();
-    this.snake.init(this.getStartSnakeBody(), 'up');
+    this.snake.init(this.getStartSnakeBody(), 'up', this.config.getColsCount() - 1, this.config.getRowsCount() - 1);
     this.food.setCoordinates(this.getRandomFreeCoordinates());
     this.render();
   },
@@ -336,7 +336,6 @@ const game = {
 
   getRandomFreeCoordinates() {
     const exclude = [this.food.getCoordinates(), ...this.snake.getBody()];
-    // without ... -  [{}, [{}, {}, {}]] => with ... [{}, {}, {}, {}];
     while (true) {
       const rndPoint = {
         x: Math.floor(Math.random() * this.config.getColsCount()),
