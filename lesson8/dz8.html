@@ -7,9 +7,36 @@
 <body>
 <script>
    'use strict'
+
+   if (!("a" in window)) {  // выведет undefined,  т.к. в окне браузера отсутствует значение "а"
+      var a = 1;
+   }
+   alert(a);
+
+   var b = function a(x) { // выведет undefined т.к. значение "а" не определено
+      x && a(--x);
+   };
+   alert(a);
    
    
+   function a(x) {          // выведет выражение a(x) {
+      return x * 2;         //                   return x * 2;
+                            //              }
+   }                        // т.к. alert вызывает значение функции под именем 'а'
+   var a;
+   alert(a);
    
+   
+   function b(x, y, a) {        // выведет 3, т.к. третья переменная функции 'b' это 'a'
+      arguments[2] = 10;        // которая при вызове функции 'b' равна 3
+      alert(a);
+   }
+   b(1, 2, 3);
+   
+   function a() {                   // выведет значение null т.к. значение вызываемой
+      alert(this);                  // функции 'а' не оапределено
+   }
+   a.call(null);
    
    
 </script>
