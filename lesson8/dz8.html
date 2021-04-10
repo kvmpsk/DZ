@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>dz8</title>
+</head>
+<body>
+<script>
+   'use strict'
+   
+   // Задание 1
+   
+   // В 7 задании замыкания можно использовать в функциях: makeStep(); growUp()
+   
+   // Задание 2
+
+   // if (!("a" in window)) {  // выведет undefined,  т.к. в окне браузера отсутствует значение "а"
+   //    var a = 1;
+   // }
+   // alert(a);
+   //
+   // var b = function a(x) { // выведет undefined т.к. значение "а" не определено
+   //    x && a(--x);
+   // };
+   // alert(a);
+   //
+   //
+   // function a(x) {          // выведет выражение a(x) {
+   //    return x * 2;         //                   return x * 2;
+   //                          //              }
+   // }                        // т.к. alert вызывает значение функции под именем 'а'
+   // var a;
+   // alert(a);
+   //
+   //
+   // function b(x, y, a) {        // выведет 3, т.к. третья переменная функции 'b' это 'a'
+   //    arguments[2] = 10;        // которая при вызове функции 'b' равна 3
+   //    alert(a);
+   // }
+   // b(1, 2, 3);
+   //
+   // function a() {                   // выведет значение null т.к. значение вызываемой
+   //    alert(this);                  // функции 'а' не определено
+   // }
+   // a.call(null);
+   
+   
+
+   // Задание 3
+
+   const infinitySum = fn => {
+      const next = (...args) => {
+         return x => {
+            if (!x) {
+               return args.reduce((acc, a) => {
+                  return fn.call(fn, acc, a)
+               }, 0);
+            }
+            return next(...args, x);
+         };
+      };
+      return next();
+   };
+
+   const iSum = infinitySum((x, y) => x + y);
+   console.log(iSum(7)(3)(4)(2)(5)());
+   
+   
+   
+</script>
+</body>
+</html>
